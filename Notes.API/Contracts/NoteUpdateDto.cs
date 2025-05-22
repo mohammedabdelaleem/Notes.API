@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Notes.API.Controllers;
+namespace Notes.API.Contracts;
 
-public class UpdateNoteDto
+public class NoteUpdateDto
 {
 	public Guid Id { get; set; }
 

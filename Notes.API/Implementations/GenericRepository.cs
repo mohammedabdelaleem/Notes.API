@@ -14,18 +14,27 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
 		dbSet = context.Set<T>();
 	}
 
-	public async Task AddAsync(T entity, CancellationToken cancellationToken = default)
+	public async Task<T> AddAsync(T entity, CancellationToken cancellationToken = default)
 	{
-		await dbSet.AddAsync(entity, cancellationToken);
+		 await  dbSet.AddAsync(entity, cancellationToken);
+		return entity;
 	}
 
-	public async Task<IEnumerable<T>> GetAllAsync(System.Linq.Expressions.Expression<Func<T, bool>>? predicate = null, string? include = null, CancellationToken cancellationToken = default)
+	public async Task<IEnumerable<T>> GetAllAsync(System.Linq.Expressions.Expression<Func<T, bool>>? predicate = null,
+		string? include = null
+		, int pageSize = 0, int pageNumber = 1,
+		CancellationToken cancellationToken = default)
 	{
 		IQueryable<T> query = dbSet.AsQueryable();
 
 		if (predicate != null)
 		{
 			query = query.Where(predicate);
+		}
+
+		if(pageSize > 0)
+		{
+			query = query.Skip(pageSize * (pageNumber-1)).Take(pageSize);
 		}
 
 		if (include != null && !string.IsNullOrWhiteSpace(include))

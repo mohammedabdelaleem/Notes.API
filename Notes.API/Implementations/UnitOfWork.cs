@@ -13,7 +13,7 @@ public class UnitOfWork : IUnitOfWork
 		this.context = context;
 		Note = new NoteRepository(context);
 	}
-	public async Task<int> Complete(CancellationToken cancellationToken=default)
+	public async Task<int> CompleteAsync(CancellationToken cancellationToken=default)
 	{
 		return await context.SaveChangesAsync(cancellationToken);
 	}
