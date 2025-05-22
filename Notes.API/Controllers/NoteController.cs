@@ -13,6 +13,7 @@ public class NoteController : ControllerBase
 	public NoteController(IUnitOfWork unitOfWork)
 	{
 		_unitOfWork = unitOfWork;
+
 	}
 
 	[HttpGet("all")]
