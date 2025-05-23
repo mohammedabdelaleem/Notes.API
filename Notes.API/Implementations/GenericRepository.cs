@@ -49,6 +49,10 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
 		return await query.ToListAsync(cancellationToken);
 	}
 
+	public async Task<int> Count(CancellationToken cancellationToken = default)
+	{
+		return await dbSet.CountAsync(cancellationToken);
+	}
 	public async Task<T> GetFirstOrDefaultAsync(System.Linq.Expressions.Expression<Func<T, bool>>? predicate = null, string? include = null ,CancellationToken cancellationToken = default)
 	{
 		IQueryable<T> query = dbSet.AsQueryable();

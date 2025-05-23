@@ -19,7 +19,10 @@ using System.Linq.Expressions;
 	// context.Notes.Where(c=>c.Id==id).ToSingleOrDefault();
 	Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>>? predicate = null, string? include = null, CancellationToken cancellationToken = default);
 
-		Task<T> AddAsync(T entity, CancellationToken cancellationToken = default);
+	Task<int> Count(CancellationToken cancellationToken = default);
+
+
+	Task<T> AddAsync(T entity, CancellationToken cancellationToken = default);
 
 		void Remove(T entity);
 		void RemoveRangeAsync(IEnumerable<T> entities);

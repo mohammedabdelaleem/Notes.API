@@ -1,5 +1,6 @@
 ﻿using Mapster;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Notes.API.Contracts;
 using Notes.API.Models;
 using Notes.API.Reposotories;
@@ -35,7 +36,7 @@ public class NoteController : ControllerBase
 				_response = new(statusCode: HttpStatusCode.NotFound, isSuccess: false,
 					errorMessages: new List<string>() { "Notes Not Found " });
 
-				return _response;
+				return NotFound(_response);
 			}
 
 			var pagination = new Pagination()
@@ -55,7 +56,7 @@ public class NoteController : ControllerBase
 		catch (Exception ex)
 		{
 			_response = new(statusCode: HttpStatusCode.InternalServerError, isSuccess: false, errorMessages: new List<string> { ex.Message });
-			return _response;
+			return BadRequest(_response);
 		}
 	}
 
@@ -63,7 +64,7 @@ public class NoteController : ControllerBase
 	[HttpGet("{id:guid}")]
 	[ProducesResponseType(StatusCodes.Status200OK)]
 	[ProducesResponseType(StatusCodes.Status404NotFound)]
-	public async Task<ActionResult<ApiResponse>> Get(Guid id, CancellationToken cancellationToken = default)
+	public async Task<ActionResult<ApiResponse>> Get([FromRoute]Guid id, CancellationToken cancellationToken = default)
 	{
 		try
 		{
@@ -109,7 +110,7 @@ public class NoteController : ControllerBase
 				return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Creation failed. Please try again later." });
 
 			_response = new ApiResponse(statusCode: HttpStatusCode.Created, isSuccess: true,
-				result: createdNote.Adapt<NoteUpdateDto>());
+				result: createdNote.Adapt<NoteDto>());
 
 			return CreatedAtAction(nameof(Get), new { id = createdNote.Id }, _response);
 
@@ -126,7 +127,7 @@ public class NoteController : ControllerBase
 	[ProducesResponseType(StatusCodes.Status200OK)]
 	[ProducesResponseType(StatusCodes.Status204NoContent)]
 	[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-	public async Task<ActionResult<ApiResponse>> Delete(Guid id, CancellationToken cancellationToken = default)
+	public async Task<ActionResult<ApiResponse>> Delete([FromRoute] Guid id, CancellationToken cancellationToken = default)
 	{
 		try
 		{
@@ -158,7 +159,7 @@ public class NoteController : ControllerBase
 	[ProducesResponseType(StatusCodes.Status200OK)]
 	[ProducesResponseType(StatusCodes.Status204NoContent)]
 	[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-	public async Task<ActionResult<ApiResponse>> Update(Guid id, [FromBody] NoteUpdateDto dto, CancellationToken cancellationToken = default)
+	public async Task<ActionResult<ApiResponse>> Update([FromRoute] Guid id, [FromBody] NoteUpdateDto dto, CancellationToken cancellationToken = default)
 	{
 		try
 		{
@@ -175,6 +176,33 @@ public class NoteController : ControllerBase
 			//return Ok(_response);
 
 			return NoContent();
+		}
+		catch (Exception ex)
+		{
+			_response = new(statusCode: HttpStatusCode.InternalServerError, isSuccess: false, errorMessages: new List<string> { ex.Message });
+			return _response;
+		}
+
+	}
+
+
+	[HttpGet("count")]
+	[ProducesResponseType(StatusCodes.Status200OK)]
+	[ProducesResponseType(StatusCodes.Status404NotFound)]
+	[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+
+	public async Task<ActionResult<ApiResponse>> Count(CancellationToken cancellationToken)
+	{
+		try
+		{
+
+			int count = await _unitOfWork.Note.Count(cancellationToken);
+			if (count == 0)
+				return NotFound(new { message = "No Notes Found" });
+
+
+			_response = new ApiResponse(HttpStatusCode.OK, result: count, isSuccess: true);
+			return Ok(_response);
 		}
 		catch (Exception ex)
 		{

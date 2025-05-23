@@ -1,6 +1,7 @@
 ﻿
 
 using Mapster;
+using Microsoft.EntityFrameworkCore;
 using Notes.API.Reposotories;
 
 namespace Notes.API.Implementations;
@@ -12,6 +13,8 @@ public class NoteRepository : GenericRepository<Note>, INoteRepository
 	{
 		this.context = context;
 	}
+
+	
 
 	public void Update(Note note)
 	{

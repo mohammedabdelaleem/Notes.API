@@ -1,92 +1,602 @@
 [
   {
-    "Id": "9f5c3a1e-8c6c-4b3a-9a29-aaa1dcb6fd01",
-    "Title": "Meeting Notes",
-    "Description": "Discussion points from the weekly team meeting.",
+    "Id": "2b59ecb3-a780-4de6-838e-8d76b3b5bece",
+    "Title": "David Goggins Quote 1",
+    "Description": "The most important conversations you\u2019ll ever have are the ones you\u2019ll have with yourself.",
     "IsVisible": true
   },
   {
-    "Id": "5a02d8de-2320-4be2-a041-5629d0b44f7e",
-    "Title": "Shopping List",
-    "Description": "Milk, Eggs, Bread, Butter",
+    "Id": "2cc9159d-95d2-479e-8291-8ce3289e46d6",
+    "Title": "David Goggins Quote 2",
+    "Description": "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
     "IsVisible": true
   },
   {
-    "Id": "7bb08c4d-4d49-4c13-8a5b-d1c84c2b8a8f",
-    "Title": "Workout Plan",
-    "Description": "Monday: Chest, Tuesday: Back, Wednesday: Legs",
-    "IsVisible": false
-  },
-  {
-    "Id": "8f0b6fc7-cf8f-47d5-a47c-2a463c0896a1",
-    "Title": "Project Ideas",
-    "Description": "AI Chatbot, Weather App, Budget Tracker",
+    "Id": "2276a423-a094-4ed5-9255-d70cdd55d30f",
+    "Title": "David Goggins Quote 3",
+    "Description": "The only way we can change is to be real with ourselves.",
     "IsVisible": true
   },
   {
-    "Id": "d4b0b244-7296-4c76-a18e-d1c3f406f3ef",
-    "Title": "Reading List",
-    "Description": "Clean Code, The Pragmatic Programmer, Atomic Habits",
-    "IsVisible": false
-  },
-  {
-    "Id": "b95f03a4-5d90-4b0e-82eb-3d05c2c0dd61",
-    "Title": "Holiday Plans",
-    "Description": "Visit Spain in August. Book flights and hotels.",
+    "Id": "98881e7c-7e90-4fb0-a2a4-366c243f9dec",
+    "Title": "David Goggins Quote 4",
+    "Description": "Suffering is a test. That\u2019s all it is. Suffering is the true test of life.",
     "IsVisible": true
   },
   {
-    "Id": "9bd5f5b1-80f5-4c5b-b8aa-ff2d90eab5f5",
-    "Title": "Bug Report",
-    "Description": "Login button not responsive on mobile devices.",
+    "Id": "6981f253-9645-466c-9070-9a7ef8b88c19",
+    "Title": "David Goggins Quote 5",
+    "Description": "You have to build calluses on your brain just like how you build calluses on your hands. Callus your mind through pain and suffering.",
     "IsVisible": true
   },
   {
-    "Id": "d68fa42e-e5b7-4f0a-b2c2-0bc66e4094f9",
-    "Title": "Birthday Gift Ideas",
-    "Description": "Watch, Wallet, Personalized Mug",
-    "IsVisible": false
-  },
-  {
-    "Id": "ee682960-978d-4ea3-bdd2-7d08c999e0f7",
-    "Title": "Recipe Notes",
-    "Description": "Chocolate cake with extra cocoa and vanilla.",
+    "Id": "4401a7b6-fd52-4de5-96f0-0fe873dd9705",
+    "Title": "David Goggins Quote 6",
+    "Description": "The most important conversations you\u2019ll ever have are the ones you\u2019ll have with yourself.",
     "IsVisible": true
   },
   {
-    "Id": "7aa0e9df-2a2d-4eaf-aaf1-6355be3cb431",
-    "Title": "Book Summary",
-    "Description": "Summarized notes from 'Deep Work' by Cal Newport.",
+    "Id": "135fc960-13da-40f4-b05e-79f6c8094dcb",
+    "Title": "David Goggins Quote 7",
+    "Description": "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
     "IsVisible": true
   },
   {
-    "Id": "e0d9f190-b80e-4e59-b7a7-2c46045c48f1",
-    "Title": "Daily Journal",
-    "Description": "Reflections and highlights of the day.",
-    "IsVisible": false
-  },
-  {
-    "Id": "c6b201a4-2b2c-42f3-a0d6-e5f8d045d281",
-    "Title": "Goals for 2025",
-    "Description": "Learn Docker, Read 12 books, Run a marathon.",
+    "Id": "fbd2429f-d68d-4d59-b14f-e9287af51afc",
+    "Title": "David Goggins Quote 8",
+    "Description": "The only way we can change is to be real with ourselves.",
     "IsVisible": true
   },
   {
-    "Id": "fb1f1746-84d8-4ef3-8a33-9c7f0c0c4189",
-    "Title": "Work Reminders",
-    "Description": "Submit monthly report, Check emails, Attend sync call.",
+    "Id": "2dd1482f-12c5-49d2-b2e7-115246f483d3",
+    "Title": "David Goggins Quote 9",
+    "Description": "Suffering is a test. That\u2019s all it is. Suffering is the true test of life.",
     "IsVisible": true
   },
   {
-    "Id": "ae9b3a75-5f3b-4f08-b1e4-b8e6b7f93e35",
-    "Title": "Ideas for YouTube",
-    "Description": "Tutorial on ASP.NET Core, React intro video",
-    "IsVisible": false
+    "Id": "1f4c6ccc-a990-4ffa-96ad-b1b1b8730a0f",
+    "Title": "David Goggins Quote 10",
+    "Description": "You have to build calluses on your brain just like how you build calluses on your hands. Callus your mind through pain and suffering.",
+    "IsVisible": true
   },
   {
-    "Id": "617f6f94-86b3-4092-8a75-2391fc6cb5fc",
-    "Title": "Packing List",
-    "Description": "Clothes, Charger, Toothbrush, Travel documents",
+    "Id": "aac6d502-00d2-4fce-9015-ba2cd128367c",
+    "Title": "David Goggins Quote 11",
+    "Description": "The most important conversations you\u2019ll ever have are the ones you\u2019ll have with yourself.",
+    "IsVisible": true
+  },
+  {
+    "Id": "6d68ccaf-2081-4448-b05c-2e72bf3213c2",
+    "Title": "David Goggins Quote 12",
+    "Description": "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
+    "IsVisible": true
+  },
+  {
+    "Id": "04f7ed32-6fb4-4a50-9912-d398dbd1ef28",
+    "Title": "David Goggins Quote 13",
+    "Description": "The only way we can change is to be real with ourselves.",
+    "IsVisible": true
+  },
+  {
+    "Id": "23ddb97f-aa6b-46ea-91bc-2ffbb07b17e6",
+    "Title": "David Goggins Quote 14",
+    "Description": "Suffering is a test. That\u2019s all it is. Suffering is the true test of life.",
+    "IsVisible": true
+  },
+  {
+    "Id": "5cb8f6ee-65fe-4557-b534-2a94a8cd6173",
+    "Title": "David Goggins Quote 15",
+    "Description": "You have to build calluses on your brain just like how you build calluses on your hands. Callus your mind through pain and suffering.",
+    "IsVisible": true
+  },
+  {
+    "Id": "c279c8af-286e-4c26-a7da-6d00d3ef6dc2",
+    "Title": "David Goggins Quote 16",
+    "Description": "The most important conversations you\u2019ll ever have are the ones you\u2019ll have with yourself.",
+    "IsVisible": true
+  },
+  {
+    "Id": "69f13507-0c69-4f4d-91db-5ef3153a085e",
+    "Title": "David Goggins Quote 17",
+    "Description": "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
+    "IsVisible": true
+  },
+  {
+    "Id": "977c8be5-16dd-463a-925b-cf40077727fb",
+    "Title": "David Goggins Quote 18",
+    "Description": "The only way we can change is to be real with ourselves.",
+    "IsVisible": true
+  },
+  {
+    "Id": "fd1350b3-4a6e-4f05-9025-b772952f5c02",
+    "Title": "David Goggins Quote 19",
+    "Description": "Suffering is a test. That\u2019s all it is. Suffering is the true test of life.",
+    "IsVisible": true
+  },
+  {
+    "Id": "f674249f-756b-4a9e-a7fa-338899789ac6",
+    "Title": "David Goggins Quote 20",
+    "Description": "You have to build calluses on your brain just like how you build calluses on your hands. Callus your mind through pain and suffering.",
+    "IsVisible": true
+  },
+  {
+    "Id": "8f7f4379-3b39-4f7f-af3b-0a52aa15d67c",
+    "Title": "David Goggins Quote 21",
+    "Description": "The most important conversations you\u2019ll ever have are the ones you\u2019ll have with yourself.",
+    "IsVisible": true
+  },
+  {
+    "Id": "c4b51cb3-cdd2-4fbe-821c-d8799c466d27",
+    "Title": "David Goggins Quote 22",
+    "Description": "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
+    "IsVisible": true
+  },
+  {
+    "Id": "33350cfd-43c4-42c7-aafe-abd7889506c1",
+    "Title": "David Goggins Quote 23",
+    "Description": "The only way we can change is to be real with ourselves.",
+    "IsVisible": true
+  },
+  {
+    "Id": "07c65d9a-026c-4b27-b9f1-9fa7b2add122",
+    "Title": "David Goggins Quote 24",
+    "Description": "Suffering is a test. That\u2019s all it is. Suffering is the true test of life.",
+    "IsVisible": true
+  },
+  {
+    "Id": "7cc184cc-614d-47a9-b265-0a27ab201230",
+    "Title": "David Goggins Quote 25",
+    "Description": "You have to build calluses on your brain just like how you build calluses on your hands. Callus your mind through pain and suffering.",
+    "IsVisible": true
+  },
+  {
+    "Id": "c2c93010-b0d4-4b86-b2f2-6ec6fb45bb8e",
+    "Title": "David Goggins Quote 26",
+    "Description": "The most important conversations you\u2019ll ever have are the ones you\u2019ll have with yourself.",
+    "IsVisible": true
+  },
+  {
+    "Id": "690776bf-a037-4f61-8a7a-5c2321493b8f",
+    "Title": "David Goggins Quote 27",
+    "Description": "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
+    "IsVisible": true
+  },
+  {
+    "Id": "60538852-f943-483b-85b6-23b5027856bc",
+    "Title": "David Goggins Quote 28",
+    "Description": "The only way we can change is to be real with ourselves.",
+    "IsVisible": true
+  },
+  {
+    "Id": "1c75f9cb-5001-4be3-ab40-f838de8bd4e9",
+    "Title": "David Goggins Quote 29",
+    "Description": "Suffering is a test. That\u2019s all it is. Suffering is the true test of life.",
+    "IsVisible": true
+  },
+  {
+    "Id": "438fd18b-77ea-4a4e-a1af-47127ad0d4f3",
+    "Title": "David Goggins Quote 30",
+    "Description": "You have to build calluses on your brain just like how you build calluses on your hands. Callus your mind through pain and suffering.",
+    "IsVisible": true
+  },
+  {
+    "Id": "c51bbd3b-93f3-4a1f-96a9-3fda668f8f42",
+    "Title": "David Goggins Quote 31",
+    "Description": "The most important conversations you\u2019ll ever have are the ones you\u2019ll have with yourself.",
+    "IsVisible": true
+  },
+  {
+    "Id": "72d0abed-8270-4a31-950d-4015656089d0",
+    "Title": "David Goggins Quote 32",
+    "Description": "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
+    "IsVisible": true
+  },
+  {
+    "Id": "04f400d2-8432-43ad-8e97-eca79933b45d",
+    "Title": "David Goggins Quote 33",
+    "Description": "The only way we can change is to be real with ourselves.",
+    "IsVisible": true
+  },
+  {
+    "Id": "916306a1-a715-46d6-973c-862d40b21684",
+    "Title": "David Goggins Quote 34",
+    "Description": "Suffering is a test. That\u2019s all it is. Suffering is the true test of life.",
+    "IsVisible": true
+  },
+  {
+    "Id": "9a666e3f-0f1c-4ab0-8d1e-4a5117192e2a",
+    "Title": "Jim Rohn Quote 1",
+    "Description": "Discipline is the bridge between goals and accomplishment.",
+    "IsVisible": true
+  },
+  {
+    "Id": "225f7251-8aaa-4970-a522-0178ec821dec",
+    "Title": "Jim Rohn Quote 2",
+    "Description": "Don't wish it were easier, wish you were better.",
+    "IsVisible": true
+  },
+  {
+    "Id": "b65660e6-51f0-4514-88d2-43cdc7a4828c",
+    "Title": "Jim Rohn Quote 3",
+    "Description": "Motivation is what gets you started. Habit is what keeps you going.",
+    "IsVisible": true
+  },
+  {
+    "Id": "a3000b30-b3a3-4bb9-861e-b1fb10711508",
+    "Title": "Jim Rohn Quote 4",
+    "Description": "Either you run the day or the day runs you.",
+    "IsVisible": true
+  },
+  {
+    "Id": "c02ef90c-943d-44d1-abce-ffbba91ac4ef",
+    "Title": "Jim Rohn Quote 5",
+    "Description": "Success is nothing more than a few simple disciplines, practiced every day.",
+    "IsVisible": true
+  },
+  {
+    "Id": "32f1b16f-e3d4-4bdf-98fd-2341bba285f9",
+    "Title": "Jim Rohn Quote 6",
+    "Description": "Discipline is the bridge between goals and accomplishment.",
+    "IsVisible": true
+  },
+  {
+    "Id": "eab41790-d785-4536-ae38-a6ad5fdeefcd",
+    "Title": "Jim Rohn Quote 7",
+    "Description": "Don't wish it were easier, wish you were better.",
+    "IsVisible": true
+  },
+  {
+    "Id": "88a3bc4c-faa6-48c8-ba9f-0a8cd97dbcae",
+    "Title": "Jim Rohn Quote 8",
+    "Description": "Motivation is what gets you started. Habit is what keeps you going.",
+    "IsVisible": true
+  },
+  {
+    "Id": "43f27183-86b5-423c-9585-b2e43de41b1d",
+    "Title": "Jim Rohn Quote 9",
+    "Description": "Either you run the day or the day runs you.",
+    "IsVisible": true
+  },
+  {
+    "Id": "f957b06c-b06e-4c65-9e8a-d2dbe55ea394",
+    "Title": "Jim Rohn Quote 10",
+    "Description": "Success is nothing more than a few simple disciplines, practiced every day.",
+    "IsVisible": true
+  },
+  {
+    "Id": "34904761-6126-4e3a-a935-5d152d55dbec",
+    "Title": "Jim Rohn Quote 11",
+    "Description": "Discipline is the bridge between goals and accomplishment.",
+    "IsVisible": true
+  },
+  {
+    "Id": "9c0e0d6c-b882-480b-80c1-7e77f6cb181c",
+    "Title": "Jim Rohn Quote 12",
+    "Description": "Don't wish it were easier, wish you were better.",
+    "IsVisible": true
+  },
+  {
+    "Id": "32096f26-a94c-41cc-936a-ced8200ebfcc",
+    "Title": "Jim Rohn Quote 13",
+    "Description": "Motivation is what gets you started. Habit is what keeps you going.",
+    "IsVisible": true
+  },
+  {
+    "Id": "d38a2ff6-607f-4448-a79a-1335239a9369",
+    "Title": "Jim Rohn Quote 14",
+    "Description": "Either you run the day or the day runs you.",
+    "IsVisible": true
+  },
+  {
+    "Id": "2afab24b-d7ba-43a5-85b6-4904adbc1ddd",
+    "Title": "Jim Rohn Quote 15",
+    "Description": "Success is nothing more than a few simple disciplines, practiced every day.",
+    "IsVisible": true
+  },
+  {
+    "Id": "2476d210-dd30-465e-983d-43ffd8723cd2",
+    "Title": "Jim Rohn Quote 16",
+    "Description": "Discipline is the bridge between goals and accomplishment.",
+    "IsVisible": true
+  },
+  {
+    "Id": "55e27cba-0fb2-48ec-b9a0-ef7c26fef352",
+    "Title": "Jim Rohn Quote 17",
+    "Description": "Don't wish it were easier, wish you were better.",
+    "IsVisible": true
+  },
+  {
+    "Id": "ea171852-1f69-4f7d-8770-46d2afae2398",
+    "Title": "Jim Rohn Quote 18",
+    "Description": "Motivation is what gets you started. Habit is what keeps you going.",
+    "IsVisible": true
+  },
+  {
+    "Id": "78bc7097-ecdd-437c-a999-15ccc7128985",
+    "Title": "Jim Rohn Quote 19",
+    "Description": "Either you run the day or the day runs you.",
+    "IsVisible": true
+  },
+  {
+    "Id": "036673ed-c006-483c-a161-ca8c4db451a9",
+    "Title": "Jim Rohn Quote 20",
+    "Description": "Success is nothing more than a few simple disciplines, practiced every day.",
+    "IsVisible": true
+  },
+  {
+    "Id": "5feaf154-28ba-403e-895b-1f7ccde625e2",
+    "Title": "Jim Rohn Quote 21",
+    "Description": "Discipline is the bridge between goals and accomplishment.",
+    "IsVisible": true
+  },
+  {
+    "Id": "b3f35d2b-9584-453c-87e2-919e539a9fea",
+    "Title": "Jim Rohn Quote 22",
+    "Description": "Don't wish it were easier, wish you were better.",
+    "IsVisible": true
+  },
+  {
+    "Id": "97df89b6-0427-4370-95d1-50b1f8a2577a",
+    "Title": "Jim Rohn Quote 23",
+    "Description": "Motivation is what gets you started. Habit is what keeps you going.",
+    "IsVisible": true
+  },
+  {
+    "Id": "39e126b4-6647-40b5-98d4-68eb6b4e376b",
+    "Title": "Jim Rohn Quote 24",
+    "Description": "Either you run the day or the day runs you.",
+    "IsVisible": true
+  },
+  {
+    "Id": "b804ae37-9fbb-49ac-b4ba-c639e7364f7f",
+    "Title": "Jim Rohn Quote 25",
+    "Description": "Success is nothing more than a few simple disciplines, practiced every day.",
+    "IsVisible": true
+  },
+  {
+    "Id": "22d746e7-2f9a-4d0b-a8b3-3f1e3196d526",
+    "Title": "Jim Rohn Quote 26",
+    "Description": "Discipline is the bridge between goals and accomplishment.",
+    "IsVisible": true
+  },
+  {
+    "Id": "4b150cd2-a36a-45e0-a8a0-f965ed0081dc",
+    "Title": "Jim Rohn Quote 27",
+    "Description": "Don't wish it were easier, wish you were better.",
+    "IsVisible": true
+  },
+  {
+    "Id": "fb63a756-642a-4a2a-9524-58ee124dd061",
+    "Title": "Jim Rohn Quote 28",
+    "Description": "Motivation is what gets you started. Habit is what keeps you going.",
+    "IsVisible": true
+  },
+  {
+    "Id": "ea7207f3-6d1c-4b57-8363-6617681793ed",
+    "Title": "Jim Rohn Quote 29",
+    "Description": "Either you run the day or the day runs you.",
+    "IsVisible": true
+  },
+  {
+    "Id": "78ec9c06-cedb-4d44-9824-81b1d7b4063b",
+    "Title": "Jim Rohn Quote 30",
+    "Description": "Success is nothing more than a few simple disciplines, practiced every day.",
+    "IsVisible": true
+  },
+  {
+    "Id": "06b02156-f444-4e90-9838-7d804a2f839a",
+    "Title": "Jim Rohn Quote 31",
+    "Description": "Discipline is the bridge between goals and accomplishment.",
+    "IsVisible": true
+  },
+  {
+    "Id": "cf081b92-6e15-463c-8862-14846486e2e1",
+    "Title": "Jim Rohn Quote 32",
+    "Description": "Don't wish it were easier, wish you were better.",
+    "IsVisible": true
+  },
+  {
+    "Id": "ac890a68-1a7a-4ffc-b7bf-3075b5c89864",
+    "Title": "Jim Rohn Quote 33",
+    "Description": "Motivation is what gets you started. Habit is what keeps you going.",
+    "IsVisible": true
+  },
+  {
+    "Id": "7631dfc7-7867-47d6-80e1-8c4215621fdd",
+    "Title": "Greatest Man Quote 1",
+    "Description": "Greatness lies not in being strong, but in the right use of strength.",
+    "IsVisible": true
+  },
+  {
+    "Id": "066652b4-bd6c-4362-82df-30e685020028",
+    "Title": "Greatest Man Quote 2",
+    "Description": "True greatness is not in what you have, but in what you give.",
+    "IsVisible": true
+  },
+  {
+    "Id": "cebfc0cc-528d-45fc-92dd-17c6216e0ec1",
+    "Title": "Greatest Man Quote 3",
+    "Description": "A great man is always willing to be little.",
+    "IsVisible": true
+  },
+  {
+    "Id": "9ed888c3-5c9c-46fa-b9e0-ebe93d0814a5",
+    "Title": "Greatest Man Quote 4",
+    "Description": "He who conquers himself is the mightiest warrior.",
+    "IsVisible": true
+  },
+  {
+    "Id": "9c23b61a-8fe0-413e-b359-6da30d73f81f",
+    "Title": "Greatest Man Quote 5",
+    "Description": "The greatness of a man is not in how much wealth he acquires, but in his integrity and his ability to affect those around him positively.",
+    "IsVisible": true
+  },
+  {
+    "Id": "cb91156b-3164-4c32-bb17-f5d9e0a3383d",
+    "Title": "Greatest Man Quote 6",
+    "Description": "Greatness lies not in being strong, but in the right use of strength.",
+    "IsVisible": true
+  },
+  {
+    "Id": "8f42ae36-25b3-4635-8350-dde3c0538e7a",
+    "Title": "Greatest Man Quote 7",
+    "Description": "True greatness is not in what you have, but in what you give.",
+    "IsVisible": true
+  },
+  {
+    "Id": "4946fa06-89a7-4dd9-be4d-5a9699ce2572",
+    "Title": "Greatest Man Quote 8",
+    "Description": "A great man is always willing to be little.",
+    "IsVisible": true
+  },
+  {
+    "Id": "bb8763cc-2cf5-4763-839b-3a8e6a047ea1",
+    "Title": "Greatest Man Quote 9",
+    "Description": "He who conquers himself is the mightiest warrior.",
+    "IsVisible": true
+  },
+  {
+    "Id": "f39924a6-e497-4539-941d-f958e6bfbacf",
+    "Title": "Greatest Man Quote 10",
+    "Description": "The greatness of a man is not in how much wealth he acquires, but in his integrity and his ability to affect those around him positively.",
+    "IsVisible": true
+  },
+  {
+    "Id": "84bf6eb4-acee-427f-9088-52d52af15514",
+    "Title": "Greatest Man Quote 11",
+    "Description": "Greatness lies not in being strong, but in the right use of strength.",
+    "IsVisible": true
+  },
+  {
+    "Id": "170371bd-4ec8-4035-a896-11ee1626b70a",
+    "Title": "Greatest Man Quote 12",
+    "Description": "True greatness is not in what you have, but in what you give.",
+    "IsVisible": true
+  },
+  {
+    "Id": "1b9262bf-7d9e-477f-af01-c9db44c2f960",
+    "Title": "Greatest Man Quote 13",
+    "Description": "A great man is always willing to be little.",
+    "IsVisible": true
+  },
+  {
+    "Id": "3d69a497-8516-4a5f-a8f4-d8d0e6edc11d",
+    "Title": "Greatest Man Quote 14",
+    "Description": "He who conquers himself is the mightiest warrior.",
+    "IsVisible": true
+  },
+  {
+    "Id": "2a4b8247-84a0-4e9a-be19-48831cffd518",
+    "Title": "Greatest Man Quote 15",
+    "Description": "The greatness of a man is not in how much wealth he acquires, but in his integrity and his ability to affect those around him positively.",
+    "IsVisible": true
+  },
+  {
+    "Id": "5a20e047-c05b-458b-81ed-9880b05d9de5",
+    "Title": "Greatest Man Quote 16",
+    "Description": "Greatness lies not in being strong, but in the right use of strength.",
+    "IsVisible": true
+  },
+  {
+    "Id": "586fb7b2-7708-449e-8fc2-d07f7a88311d",
+    "Title": "Greatest Man Quote 17",
+    "Description": "True greatness is not in what you have, but in what you give.",
+    "IsVisible": true
+  },
+  {
+    "Id": "de053f28-9718-4aca-b976-4ce3bcda64a7",
+    "Title": "Greatest Man Quote 18",
+    "Description": "A great man is always willing to be little.",
+    "IsVisible": true
+  },
+  {
+    "Id": "c24c9e81-0afa-4136-9a15-0b2aef104555",
+    "Title": "Greatest Man Quote 19",
+    "Description": "He who conquers himself is the mightiest warrior.",
+    "IsVisible": true
+  },
+  {
+    "Id": "239c67ab-ad7c-4c99-af80-10a7f8b2d5c4",
+    "Title": "Greatest Man Quote 20",
+    "Description": "The greatness of a man is not in how much wealth he acquires, but in his integrity and his ability to affect those around him positively.",
+    "IsVisible": true
+  },
+  {
+    "Id": "b033b593-888f-43f5-b2af-1300db291840",
+    "Title": "Greatest Man Quote 21",
+    "Description": "Greatness lies not in being strong, but in the right use of strength.",
+    "IsVisible": true
+  },
+  {
+    "Id": "80379d46-4aee-4b91-99be-439e5ce604b4",
+    "Title": "Greatest Man Quote 22",
+    "Description": "True greatness is not in what you have, but in what you give.",
+    "IsVisible": true
+  },
+  {
+    "Id": "e94ec0fb-2201-4e96-8306-b659b64a7cfb",
+    "Title": "Greatest Man Quote 23",
+    "Description": "A great man is always willing to be little.",
+    "IsVisible": true
+  },
+  {
+    "Id": "f4ae8ae8-c533-4666-ba31-a5ed36898b85",
+    "Title": "Greatest Man Quote 24",
+    "Description": "He who conquers himself is the mightiest warrior.",
+    "IsVisible": true
+  },
+  {
+    "Id": "faacedad-94ed-4f53-8312-24607e15c492",
+    "Title": "Greatest Man Quote 25",
+    "Description": "The greatness of a man is not in how much wealth he acquires, but in his integrity and his ability to affect those around him positively.",
+    "IsVisible": true
+  },
+  {
+    "Id": "5791b230-c4d2-484f-8d6e-bfda2cdc4462",
+    "Title": "Greatest Man Quote 26",
+    "Description": "Greatness lies not in being strong, but in the right use of strength.",
+    "IsVisible": true
+  },
+  {
+    "Id": "e77a5ed1-281b-4cac-b8f0-bd6c8ac1901a",
+    "Title": "Greatest Man Quote 27",
+    "Description": "True greatness is not in what you have, but in what you give.",
+    "IsVisible": true
+  },
+  {
+    "Id": "7e6b7425-3167-4d75-9b57-71bfdbce3132",
+    "Title": "Greatest Man Quote 28",
+    "Description": "A great man is always willing to be little.",
+    "IsVisible": true
+  },
+  {
+    "Id": "a03a71d4-f1ad-4d0a-9a14-f31a3c3de873",
+    "Title": "Greatest Man Quote 29",
+    "Description": "He who conquers himself is the mightiest warrior.",
+    "IsVisible": true
+  },
+  {
+    "Id": "81dc52d3-3146-4303-8008-3b4c0a4c6fbd",
+    "Title": "Greatest Man Quote 30",
+    "Description": "The greatness of a man is not in how much wealth he acquires, but in his integrity and his ability to affect those around him positively.",
+    "IsVisible": true
+  },
+  {
+    "Id": "fdd3cd4e-aad9-4873-9ecc-4cbeb363041b",
+    "Title": "Greatest Man Quote 31",
+    "Description": "Greatness lies not in being strong, but in the right use of strength.",
+    "IsVisible": true
+  },
+  {
+    "Id": "60c296b0-d229-4357-aa98-917beeab5706",
+    "Title": "Greatest Man Quote 32",
+    "Description": "True greatness is not in what you have, but in what you give.",
+    "IsVisible": true
+  },
+  {
+    "Id": "52820991-04d3-4651-aa83-932695b03f94",
+    "Title": "Greatest Man Quote 33",
+    "Description": "A great man is always willing to be little.",
     "IsVisible": true
   }
 ]
