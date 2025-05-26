@@ -13,7 +13,7 @@ public static class DependencyInjection
 	public static IServiceCollection AddDependencies(this IServiceCollection services, IConfiguration configuration)
 	{
 		// Register Controllers
-		services.AddControllers();
+		services.AddControllers().AddNewtonsoftJson(); ;
 
 		// Register Mapster 
 		var mappingConfigurations = TypeAdapterConfig.GlobalSettings;

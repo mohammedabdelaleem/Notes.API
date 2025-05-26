@@ -13,4 +13,7 @@ public class Note
 	public string Description { get; set; }
 
 	public bool IsVisible { get; set; } = true;
+	public bool IsArchieved { get; set; } = false;
+	public bool IsFavourite { get; set; }=false;
+
 }

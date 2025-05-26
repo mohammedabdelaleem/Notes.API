@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Notes.API.Contracts;
@@ -29,7 +30,88 @@ public class NoteController : ControllerBase
 	{
 		try
 		{
-			var notes = await _unitOfWork.Note.GetAllAsync(pageSize: pageSize, pageNumber: pageNumber, cancellationToken: cancellationToken);
+			var notes = await _unitOfWork.Note.GetAllAsync(predicate:n=>n.IsVisible
+				,pageSize: pageSize, pageNumber: pageNumber, cancellationToken: cancellationToken);
+
+			if (notes == null || !notes.Any())
+			{
+				_response = new(statusCode: HttpStatusCode.NotFound, isSuccess: false,
+					errorMessages: new List<string>() { "Notes Not Found " });
+
+				return NotFound(_response);
+			}
+
+			var pagination = new Pagination()
+			{
+				PageNumber = pageNumber,
+				PageSize = pageSize
+			};
+
+			Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagination));
+
+			_response = new ApiResponse(statusCode: HttpStatusCode.OK, isSuccess: true,
+				result: notes.Adapt<IEnumerable<NoteDto>>());
+
+			return Ok(_response);
+
+		}
+		catch (Exception ex)
+		{
+			_response = new(statusCode: HttpStatusCode.InternalServerError, isSuccess: false, errorMessages: new List<string> { ex.Message });
+			return BadRequest(_response);
+		}
+	}
+
+	[HttpGet("all-favourite")]
+	[ProducesResponseType(StatusCodes.Status200OK)]
+	[ProducesResponseType(StatusCodes.Status404NotFound)]
+	[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+	public async Task<ActionResult<ApiResponse>> GetAllFavorites(int pageSize = 0, int pageNumber = 1, CancellationToken cancellationToken = default)
+	{
+		try
+		{
+			var notes = await _unitOfWork.Note.GetAllAsync(predicate: n => n.IsFavourite
+				, pageSize: pageSize, pageNumber: pageNumber, cancellationToken: cancellationToken);
+
+			if (notes == null || !notes.Any())
+			{
+				_response = new(statusCode: HttpStatusCode.NotFound, isSuccess: false,
+					errorMessages: new List<string>() { "Notes Not Found " });
+
+				return NotFound(_response);
+			}
+
+			var pagination = new Pagination()
+			{
+				PageNumber = pageNumber,
+				PageSize = pageSize
+			};
+
+			Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagination));
+
+			_response = new ApiResponse(statusCode: HttpStatusCode.OK, isSuccess: true,
+				result: notes.Adapt<IEnumerable<NoteDto>>());
+
+			return Ok(_response);
+
+		}
+		catch (Exception ex)
+		{
+			_response = new(statusCode: HttpStatusCode.InternalServerError, isSuccess: false, errorMessages: new List<string> { ex.Message });
+			return BadRequest(_response);
+		}
+	}
+
+	[HttpGet("all-archived")]
+	[ProducesResponseType(StatusCodes.Status200OK)]
+	[ProducesResponseType(StatusCodes.Status404NotFound)]
+	[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+	public async Task<ActionResult<ApiResponse>> GetAllArchived(int pageSize = 0, int pageNumber = 1, CancellationToken cancellationToken = default)
+	{
+		try
+		{
+			var notes = await _unitOfWork.Note.GetAllAsync(predicate: n => n.IsArchieved
+				, pageSize: pageSize, pageNumber: pageNumber, cancellationToken: cancellationToken);
 
 			if (notes == null || !notes.Any())
 			{
@@ -211,6 +293,59 @@ public class NoteController : ControllerBase
 		}
 
 	}
+
+
+	[HttpPatch("{noteId:guid}")]
+	[ProducesResponseType(StatusCodes.Status200OK)]
+	[ProducesResponseType(StatusCodes.Status400BadRequest)]
+	[ProducesResponseType(StatusCodes.Status404NotFound)]
+	[ProducesResponseType(StatusCodes.Status401Unauthorized)]
+	[ProducesResponseType(StatusCodes.Status403Forbidden)]
+	[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+	public async Task<ActionResult<ApiResponse>> ToggleFavorite(
+	[FromRoute] Guid noteId,
+	[FromBody] JsonPatchDocument<NoteUpdateDto> patchDTO,
+	CancellationToken cancellationToken = default)
+	{
+		try
+		{
+			if (patchDTO is null)
+				return BadRequest(new { message = "Invalid patch document." });
+
+
+			var note = await _unitOfWork.Note.GetFirstOrDefaultAsync(n => n.Id == noteId, cancellationToken: cancellationToken);
+			if (note == null)
+				return NotFound(new { message = $"Note with ID {noteId} not found." });
+
+			var noteToPatch = note.Adapt<NoteUpdateDto>();
+			patchDTO.ApplyTo(noteToPatch, ModelState);
+
+			if (!ModelState.IsValid || !TryValidateModel(noteToPatch))
+				return ValidationProblem(ModelState);
+
+			noteToPatch.Adapt(note); // map back to the tracked entity
+			_unitOfWork.Note.Update(note);
+
+			if (await _unitOfWork.CompleteAsync(cancellationToken) <= 0)
+				return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Partial update failed." });
+
+			var response = new ApiResponse(HttpStatusCode.OK, isSuccess: true);
+			return Ok(response);
+		}
+		catch (Exception ex)
+		{
+			var response = new ApiResponse(
+				statusCode: HttpStatusCode.InternalServerError,
+				isSuccess: false,
+				errorMessages: new List<string> { ex.Message });
+
+			return StatusCode(StatusCodes.Status500InternalServerError, response);
+		}
+	}
+
+
+
+
 
 }
 
