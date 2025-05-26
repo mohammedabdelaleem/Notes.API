@@ -13,4 +13,6 @@ public class NoteUpdateDto
 	public string Description { get; set; }
 
 	public bool IsVisible { get; set; }
+	public bool IsArchieved { get; set; } = false;
+	public bool IsFavourite { get; set; } = false;
 }

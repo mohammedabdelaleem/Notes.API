@@ -8,5 +8,7 @@ public class NoteDto
 	public string Title { get; set; }
 	public string Description { get; set; }
 	public bool IsVisible { get; set; }
+	public bool IsArchieved { get; set; } 
+	public bool IsFavourite { get; set; }
 
 }

@@ -118,7 +118,7 @@ public class NoteController : ControllerBase
 				_response = new(statusCode: HttpStatusCode.NotFound, isSuccess: false,
 					errorMessages: new List<string>() { "Notes Not Found " });
 
-				return NotFound(_response);
+				return Ok(_response);
 			}
 
 			var pagination = new Pagination()
@@ -343,6 +343,54 @@ public class NoteController : ControllerBase
 		}
 	}
 
+
+	[HttpPatch("{noteId:guid}/archive")]
+	[ProducesResponseType(StatusCodes.Status200OK)]
+	[ProducesResponseType(StatusCodes.Status400BadRequest)]
+	[ProducesResponseType(StatusCodes.Status404NotFound)]
+	[ProducesResponseType(StatusCodes.Status401Unauthorized)]
+	[ProducesResponseType(StatusCodes.Status403Forbidden)]
+	[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+	public async Task<ActionResult<ApiResponse>> ToggleArchive(
+[FromRoute] Guid noteId,
+[FromBody] JsonPatchDocument<NoteUpdateDto> patchDTO,
+CancellationToken cancellationToken = default)
+	{
+		try
+		{
+			if (patchDTO is null)
+				return BadRequest(new { message = "Invalid patch document." });
+
+
+			var note = await _unitOfWork.Note.GetFirstOrDefaultAsync(n => n.Id == noteId, cancellationToken: cancellationToken);
+			if (note == null)
+				return NotFound(new { message = $"Note with ID {noteId} not found." });
+
+			var noteToPatch = note.Adapt<NoteUpdateDto>();
+			patchDTO.ApplyTo(noteToPatch, ModelState);
+
+			if (!ModelState.IsValid || !TryValidateModel(noteToPatch))
+				return ValidationProblem(ModelState);
+
+			noteToPatch.Adapt(note); // map back to the tracked entity
+			_unitOfWork.Note.Update(note);
+
+			if (await _unitOfWork.CompleteAsync(cancellationToken) <= 0)
+				return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Partial update failed." });
+
+			var response = new ApiResponse(HttpStatusCode.OK, isSuccess: true);
+			return Ok(response);
+		}
+		catch (Exception ex)
+		{
+			var response = new ApiResponse(
+				statusCode: HttpStatusCode.InternalServerError,
+				isSuccess: false,
+				errorMessages: new List<string> { ex.Message });
+
+			return StatusCode(StatusCodes.Status500InternalServerError, response);
+		}
+	}
 
 
 
