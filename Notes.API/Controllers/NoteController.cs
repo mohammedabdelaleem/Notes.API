@@ -26,12 +26,21 @@ public class NoteController : ControllerBase
 	[ProducesResponseType(StatusCodes.Status200OK)]
 	[ProducesResponseType(StatusCodes.Status404NotFound)]
 	[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-	public async Task<ActionResult<ApiResponse>> GetAll(int pageSize = 0, int pageNumber = 1, CancellationToken cancellationToken = default)
+	public async Task<ActionResult<ApiResponse>> GetAll([FromQuery]int pageSize = 0,
+		[FromQuery] int pageNumber = 1,
+		CancellationToken cancellationToken = default)
 	{
 		try
 		{
-			var notes = await _unitOfWork.Note.GetAllAsync(predicate:n=>n.IsVisible
-				,pageSize: pageSize, pageNumber: pageNumber, cancellationToken: cancellationToken);
+			if (pageSize < 0)
+			{
+				return BadRequest(new ApiResponse(HttpStatusCode.BadRequest, false, errorMessages: new List<string> { "Page size must be greater than 0" }));
+			}
+
+			int effectivePageSize = pageSize > 0 ? pageSize : 0; 
+
+			var notes = await _unitOfWork.Note.GetAllAsync(predicate:n=>n.IsVisible && !n.IsArchieved
+				,pageSize: effectivePageSize, pageNumber: pageNumber, cancellationToken: cancellationToken);
 
 			if (notes == null || !notes.Any())
 			{
@@ -44,7 +53,8 @@ public class NoteController : ControllerBase
 			var pagination = new Pagination()
 			{
 				PageNumber = pageNumber,
-				PageSize = pageSize
+				PageSize = pageSize,
+			 TotalCount = await _unitOfWork.Note.CountAsync(n => n.IsVisible)
 			};
 
 			Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagination));
@@ -278,7 +288,7 @@ public class NoteController : ControllerBase
 		try
 		{
 
-			int count = await _unitOfWork.Note.Count(cancellationToken);
+			int count = await _unitOfWork.Note.CountAsync(cancellationToken: cancellationToken);
 			if (count == 0)
 				return NotFound(new { message = "No Notes Found" });
 

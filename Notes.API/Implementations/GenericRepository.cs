@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Notes.API.Data;
 using Notes.API.Reposotories;
+using System.Linq.Expressions;
 
 namespace Notes.API.Implementations;
 
@@ -49,9 +50,14 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
 		return await query.ToListAsync(cancellationToken);
 	}
 
-	public async Task<int> Count(CancellationToken cancellationToken = default)
+	public async Task<int> CountAsync(Expression<Func<T, bool>>? predicate = null, CancellationToken cancellationToken = default)
 	{
-		return await dbSet.CountAsync(cancellationToken);
+		var query = dbSet.AsQueryable();
+
+		if (predicate != null)
+			query = query.Where(predicate); 
+
+		return await query.CountAsync(cancellationToken);
 	}
 	public async Task<T> GetFirstOrDefaultAsync(System.Linq.Expressions.Expression<Func<T, bool>>? predicate = null, string? include = null ,CancellationToken cancellationToken = default)
 	{

@@ -21,7 +21,8 @@ internal class Program
 		{
 			policy.AllowAnyOrigin()
 			.AllowAnyHeader()
-			.AllowAnyMethod();
+			.AllowAnyMethod()
+			.WithExposedHeaders("X-Pagination"); ;
 		});
 
 		app.UseAuthorization();
