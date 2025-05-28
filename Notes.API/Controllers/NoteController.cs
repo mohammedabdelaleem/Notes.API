@@ -15,11 +15,12 @@ public class NoteController : ControllerBase
 {
 	private ApiResponse _response;
 	private readonly IUnitOfWork _unitOfWork;
+	private readonly ILogger<NoteController> _logger;
 
-	public NoteController(IUnitOfWork unitOfWork)
+	public NoteController(IUnitOfWork unitOfWork, ILogger<NoteController>logger)
 	{
 		_unitOfWork = unitOfWork;
-
+		_logger = logger;
 	}
 
 	[HttpGet("all")]
@@ -134,7 +135,8 @@ public class NoteController : ControllerBase
 			var pagination = new Pagination()
 			{
 				PageNumber = pageNumber,
-				PageSize = pageSize
+				PageSize = pageSize,
+				TotalCount = await _unitOfWork.Note.CountAsync(n=>n.IsArchieved , cancellationToken)
 			};
 
 			Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagination));
@@ -186,6 +188,8 @@ public class NoteController : ControllerBase
 	{
 		try
 		{
+			_logger.LogInformation($"DTO received: {dto}", dto);
+
 			if (!ModelState.IsValid)
 				return BadRequest(new { message = "Recheck The Note Model Please !!!" });
 
@@ -204,7 +208,7 @@ public class NoteController : ControllerBase
 			_response = new ApiResponse(statusCode: HttpStatusCode.Created, isSuccess: true,
 				result: createdNote.Adapt<NoteDto>());
 
-			return CreatedAtAction(nameof(Get), new { id = createdNote.Id }, _response);
+			return CreatedAtAction(nameof(Get),new { id = createdNote.Id }, _response);
 
 		}
 		catch (Exception ex)
@@ -282,26 +286,38 @@ public class NoteController : ControllerBase
 	[ProducesResponseType(StatusCodes.Status200OK)]
 	[ProducesResponseType(StatusCodes.Status404NotFound)]
 	[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-
-	public async Task<ActionResult<ApiResponse>> Count(CancellationToken cancellationToken)
+	public async Task<ActionResult<ApiResponse>> Count([FromQuery] string? tagret = null,
+		CancellationToken cancellationToken=default)
 	{
 		try
 		{
+			int count;
 
-			int count = await _unitOfWork.Note.CountAsync(cancellationToken: cancellationToken);
+			if (tagret == "favourite")
+			{
+				count = await _unitOfWork.Note.CountAsync(n => n.IsFavourite, cancellationToken);
+			}
+			else if (tagret == "archived")
+			{
+				count = await _unitOfWork.Note.CountAsync(n => n.IsArchieved, cancellationToken);
+			}
+			else
+			{
+				count = await _unitOfWork.Note.CountAsync(n => n.IsVisible, cancellationToken);
+			}
+
 			if (count == 0)
 				return NotFound(new { message = "No Notes Found" });
-
 
 			_response = new ApiResponse(HttpStatusCode.OK, result: count, isSuccess: true);
 			return Ok(_response);
 		}
 		catch (Exception ex)
 		{
-			_response = new(statusCode: HttpStatusCode.InternalServerError, isSuccess: false, errorMessages: new List<string> { ex.Message });
+			_response = new ApiResponse(HttpStatusCode.InternalServerError, isSuccess: false,
+				errorMessages: new List<string> { ex.Message });
 			return _response;
 		}
-
 	}
 
 

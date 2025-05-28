@@ -11,5 +11,4 @@ public class NoteCreateDto
 	[MaxLength(200, ErrorMessage = "Max Length Is 200 !!")]
 	public string Description { get; set; }
 
-	public bool IsVisible { get; set; }
 }
